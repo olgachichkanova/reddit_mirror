@@ -12,4 +12,4 @@ This app is mirroring your reddit account and show your main feed.
 - clone the repo
 - `npm install`
 - `npm run dev`
-- Log in to your reddit account
+- Click to "Anonymous" to log in to your reddit account
