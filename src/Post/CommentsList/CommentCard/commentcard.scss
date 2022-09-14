@@ -1,0 +1,70 @@
+@import '../../../main.global.scss';
+
+.commentCard{
+    display: flex;
+    &:nth-child(n+2) {
+        margin-top: 40px;
+    }
+
+    .rateIcons{
+        display: flex;
+        flex-flow: column;
+
+        .rateIconDown {
+            transform: rotate(180deg);
+        }
+        .devider{
+            background-color: $grayd9;
+            width: 3px;
+            height: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    .comment {
+    background-color: $white;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    width: 100%;
+
+        .controls {
+            display: flex;
+            width: 100%;
+            padding-top: 10px;
+            padding-right: 27px;
+
+            &>button>svg {
+                padding-right: 5px;
+            }
+
+            button{
+                display: flex;
+                align-items: center;
+            }
+            button>span{
+                color: $gray99;
+            }
+        }   
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .comment {
+        
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .comment{
+        
+    }
+}
+
+@media screen and (min-width: 1201px){
+    .comment{
+        
+    }
+}

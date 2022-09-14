@@ -1,0 +1,61 @@
+@import '../../../main.global.scss';
+
+.menu {
+    position: relative;
+    padding: 0;
+}
+
+.menuButton {
+    width: 31px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 31px;
+    &:hover {
+        background-color: $black;
+        opacity: 10%;
+    }
+}
+
+.menuButton:active {
+    background-color: rgba(51, 51, 51, 0.1);
+}
+
+.dropdown {
+    position: absolute;
+    right: 39px;
+    top: 53px;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    background-color: $white;
+}
+
+.closeButton {
+    color: $gray66;
+    background-color: $grayd9;
+    padding: 12px 23px;
+    border-radius: 0 0 3px 3px;
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .menuButton {
+        transform: rotate(90deg);
+    }
+
+    .dropdown {
+        right: 10;
+        top: 19;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    
+}
+
+@media screen and (min-width: 1201px){
+    
+    
+}

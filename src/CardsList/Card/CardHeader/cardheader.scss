@@ -1,0 +1,164 @@
+@import '../../../main.global.scss';
+
+.cardheader {
+    padding: 0 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    a{
+        text-decoration: none;
+    }
+    .cardHeaderBox{
+        flex-direction: row-reverse;
+        max-width: 600px;
+
+        .cardMeta{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            .user {
+                display: flex;
+                align-items: center;
+                .userpic{
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 100%;
+                    overflow: hidden;
+                    margin-right: 7px;
+                    
+                    img{
+                        width: 100%;
+                        
+                    }
+                }
+                .username {
+                    color: $orange;
+                    margin-right: 3px;
+                }
+            }
+    
+            .timestamp{
+                color: $gray99;
+                display: flex;
+                margin-right: 2px;
+                .timestampDesktop{
+                    color: $gray99;
+                    display: none;
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+    
+    .dropdownButton{
+        background-color: transparent;
+        border: transparent;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+
+        &:hover {
+            background-color: $black;
+            opacity: 10%;
+        }
+    }
+
+    .list {
+        width: 160px;
+        background-color: $white;
+        padding: 14px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+        position: absolute;
+    
+        li {
+            display: flex;
+            color: $gray99;
+            &:nth-last-child(n+2){
+              padding-bottom: 5px;
+              border-bottom: 1px solid $grayec;
+            }
+    
+            &:nth-child(n+2){
+                padding-top: 5px;
+            }
+            
+        }
+        img {
+            max-width: 15px;
+            margin-right: 5px;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 767px) {
+    .cardheader {
+        padding: 20px;
+        .cardHeaderBox{
+            flex-direction: column;
+        }
+        .cardMeta{
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    }
+    .dropdownButton {
+        transform: rotate(90deg);
+    }
+
+    .list {
+        right: -5px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .cardheader {
+        align-items: center;
+        order: 2;
+        .cardHeaderBox {
+            flex-direction: column-reverse;
+        }
+        .cardMeta{
+            .username {
+                margin-right: 2px;
+            }
+
+            .timestamp{
+                .timestampDesktop{
+                    display: block;
+                }
+            }
+        }
+        .list {
+            margin-top: 20px;
+            right: -50px;
+        }
+    }
+}
+
+@media screen and (min-width: 1201px){
+    .cardheader {
+        align-items: center;
+        order: 2;
+        .cardHeaderBox{
+            flex-direction: column-reverse;
+            .user {
+                .username {
+                    margin-right: 2px;
+                }
+            }
+    
+            .timestamp{
+                .timestampDesktop{
+                    display: block;
+                }
+            }
+        }
+        .list {
+            margin-top: 20px;
+            right: -50px;
+        }
+    }
+}

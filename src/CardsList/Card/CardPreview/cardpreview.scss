@@ -1,0 +1,30 @@
+@import '../../../main.global.scss';
+
+.cardpreview{
+    
+    overflow: hidden;
+    
+}
+
+@media screen and (max-width: 767px) {
+    .cardpreview {
+        width: 100%;;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .cardpreview{
+        width: 190px;
+        height: 107px;
+        order: 3;
+    }
+}
+
+@media screen and (min-width: 1201px){
+    .cardpreview{
+        width: 190px;
+        height: 107px;
+        order: 3;
+    }
+}

@@ -1,0 +1,32 @@
+@import '../../main.global.scss';
+
+.timestamp{
+    color: $gray99;
+    display: flex;
+    margin-right: 2px;
+    .timestampDesktop{
+        color: $gray99;
+        display: none;
+        margin-right: 2px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .timestamp{
+        .timestampDesktop{
+            display: block;
+        }
+    }
+}
+
+@media screen and (min-width: 1201px){
+    .timestamp{
+        .timestampDesktop{
+            display: block;
+        }
+    }
+}

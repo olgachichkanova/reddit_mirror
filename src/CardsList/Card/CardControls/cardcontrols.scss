@@ -1,0 +1,56 @@
+@import '../../../main.global.scss';
+
+
+.cardcontrols {
+    display: flex;
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ratingBtnDown {
+    transform: rotate(180deg);
+}
+.comments {
+    display: none;
+}
+
+.actionButtons {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .cardcontrols {
+        width: 100%;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+    .rating {
+        flex-direction: row;
+    }
+    .cardcontrols {
+        .comments {
+            display: flex;
+        }
+        
+        .actionButtons {
+            display: flex;
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .cardcontrols{
+        
+    }
+}
+
+@media screen and (min-width: 1201px){
+    .cardcontrols{
+       
+    }
+}

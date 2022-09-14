@@ -1,0 +1,25 @@
+@import '../main.global.scss';
+
+.content{
+    background-color: $white;
+    border-radius: 7px 7px 0 0;
+}
+
+@media screen and (max-width: 767px) {
+    .content {
+        
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .content{
+        
+    }
+}
+
+@media screen and (min-width: 1201px){
+    .content{
+        
+    }
+}

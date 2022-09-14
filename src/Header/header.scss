@@ -1,0 +1,43 @@
+@import '../main.global.scss';
+
+// .header {
+//     display: flex;
+//     padding: 40px;
+// }
+
+// @media screen and (max-width: 767px) {
+//     .header {
+//         flex-flow: column nowrap;
+//         align-items: center;
+//         padding: 0;
+//     }
+// }
+
+// @media screen and (min-width: 768px) and (max-width: 1200px){
+//     .header {
+//         flex-flow: row wrap;
+//     }
+// }
+
+// @media screen and (min-width: 1201px){
+//     .header {
+//         flex-flow: row nowrap;
+//         justify-content: space-between;
+//         padding: 67px 0;
+//     }
+// }
+@media all and (min-width: 1024px) {
+    .header {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      padding: 40px;
+    }
+  }
+  
+  @media all and (min-width: 1540px) {
+    .header {
+      padding: 67px 0;
+    }
+  }
+  

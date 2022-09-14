@@ -1,0 +1,29 @@
+@import '../../main.global.scss';
+
+.card {
+    background-color: $white;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+
+@media screen and (max-width: 767px) {
+    .card {
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .card{
+        flex-flow: row-reverse;
+    }
+}
+
+@media screen and (min-width: 1201px){
+    .card{
+        flex-flow: row-reverse;
+    }
+}

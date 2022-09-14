@@ -1,0 +1,35 @@
+@import '../main.global.scss';
+
+.cardsList{
+    padding: 40px;
+}
+
+.loadMore {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    color:$orange;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cardsList {
+        padding: 40px 0;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1200px){
+    .cardsList{
+       
+    }
+}
+
+@media screen and (min-width: 1201px){
+    .cardsList{
+        
+    }
+}
