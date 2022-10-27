@@ -21,6 +21,9 @@ export function CardsList() {
   
 
   useEffect(() => {
+    if(!token) {
+      return
+    }
     async function load() {
       setLoading(true);
       setErrorLoading('');
