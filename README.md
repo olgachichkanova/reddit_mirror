@@ -8,6 +8,7 @@ This app is mirroring your reddit account and show your main feed.
 - show the posts in your feed
 ![Reddit Mirror feed](./src/images/reddit-mirror-feed.png)
 - click on the post card open the post in the modal window with comments
+![Reddit Mirror comments](./src/images/reddit-mirror-comments.png)
 - infinite scroll combined with "Load more" btn
 
 ## How to run:
