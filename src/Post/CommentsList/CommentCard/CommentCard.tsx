@@ -4,19 +4,26 @@ import { CommentIcon, RateIcon, ReportIcon, ShareIcon } from '../../../Icons';
 import { Metadata } from '../../../Metadata';
 import { Text } from '../../../Text';
 import styles from './commentcard.scss';
+import { CommentsList } from '../CommentsList';
+import { ICommentsData } from '../../../hooks/useCommentsData';
 
 interface ICommentCard {
   author_icon?: string;
   author?: string;
   created?: string;
   selftext?: string;
-  replies?: {};
+  replies: {
+    data: {
+      children: ICommentsData[]
+    }
+  };
 }
 
 export function CommentCard({author, author_icon, created, selftext, replies}: ICommentCard) {
   const [isFormOpened, setIsFormOpened] = useState(false);
   return (
-    <div className={styles.commentCard}>
+    <div className={styles.commentCardBox}>
+      <div className={styles.commentCard}>
       <div className={styles.rateIcons}>
         <button><RateIcon /></button>
         <button className={styles.rateIconDown}><RateIcon /></button>
@@ -53,6 +60,12 @@ export function CommentCard({author, author_icon, created, selftext, replies}: I
         />
       )}
       </div>
+      </div>
+      {typeof replies !== 'string' &&
+      <div className={styles.listBox}>
+          <CommentsList data={replies.data.children} />
+      </div>
+      }
     </div>
   );
 }

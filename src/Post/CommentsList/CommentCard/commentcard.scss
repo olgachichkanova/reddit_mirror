@@ -1,5 +1,11 @@
 @import '../../../main.global.scss';
 
+.commentCardBox {
+    .listBox {
+        margin-left: 20px;
+    }
+}
+
 .commentCard{
     display: flex;
     &:nth-child(n+2) {
