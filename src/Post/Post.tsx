@@ -36,19 +36,21 @@ export function Post({title, selftext, onClose, id, positionY}: IPostProps) {
   if(!node) return null;
 
   return ReactDOM.createPortal((
-    <div className={styles.modal} ref={ref} style={{top:positionY}}>
-      <h2>{title}</h2>
-      <div className={styles.content}>
-        <Text 
-          As={'p'} 
-          size={14}
-          children={selftext}
+    <div className={styles.modal}>
+      <div className={styles.box} ref={ref}>
+        <h2>{title}</h2>
+        <div className={styles.content}>
+          <Text 
+            As={'p'} 
+            size={14}
+            children={selftext}
+          />
+        </div>
+        <CommentFormContainer />
+        <CommentsList 
+          data={commentsData}
         />
       </div>
-      <CommentFormContainer />
-      <CommentsList 
-        data={commentsData}
-      />
     </div>
     ), node);
 }
