@@ -1,21 +1,26 @@
 @import '../main.global.scss';
 .modal {
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.15);
-    border-radius: 7px;
-    min-width: 200px;
-    min-height: 160px;
-    max-width: 80%;
-    padding: 24px;
-    margin-bottom: 25px;
-  }
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+}
+
+.box {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 7px;
+  min-width: 200px;
+  min-height: 160px;
+  max-width: 80%;
+  padding: 24px;
+  margin: 0 auto;
+}
   
   .content {
     overflow-y: auto;
