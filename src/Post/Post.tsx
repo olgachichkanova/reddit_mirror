@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { CommentFormContainer } from '../CommentFormContainer';
+import { useCommentsData } from '../hooks/useCommentsData';
 import { Text } from '../Text';
 import { CommentsList } from './CommentsList';
 import styles from './post.scss';
@@ -16,6 +17,7 @@ interface IPostProps {
   positionY: string;
 }
 export function Post({title, selftext, onClose, id, positionY}: IPostProps) {
+  const [commentsData] = useCommentsData(id);
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     function handleClick(event: MouseEvent) {
@@ -45,7 +47,7 @@ export function Post({title, selftext, onClose, id, positionY}: IPostProps) {
       </div>
       <CommentFormContainer />
       <CommentsList 
-        id={id}
+        data={commentsData}
       />
     </div>
     ), node);

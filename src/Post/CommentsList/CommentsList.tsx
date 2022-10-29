@@ -1,17 +1,16 @@
 import React from 'react';
-import { useCommentsData } from '../../hooks/useCommentsData';
+import { ICommentsData, useCommentsData } from '../../hooks/useCommentsData';
 import { CommentCard } from './CommentCard';
 import styles from './commentslist.scss';
 
-interface ICommentsList {
-  id: string
+export interface ICommentsList{
+  data: ICommentsData[];
 }
 
-export function CommentsList({id}: ICommentsList) {
-  const [commentsData] = useCommentsData(id);
+export function CommentsList({data}: ICommentsList) {
   return (
     <ul className={styles.commentsList}>
-    {commentsData.map(comment => {
+    {data.map(comment => {
       if(comment.data !== undefined) {
         const dt = comment.data.created;
         const date = new Date(dt * 1000).toLocaleDateString();
@@ -20,6 +19,7 @@ export function CommentsList({id}: ICommentsList) {
             author={comment.data.author}
             created={date}
             selftext={comment.data.body}
+            replies={comment.data.replies}
           />
         }
     })}

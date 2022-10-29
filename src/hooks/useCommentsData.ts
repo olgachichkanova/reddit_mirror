@@ -3,16 +3,21 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/reducer";
 
-interface CommentData {
-    id: number;
+export interface CommentData {
+    id: string;
     author?: string;
     author_icon?: string;
     body?: string;
     created: any;
+    replies: {
+      data: {
+        children: ICommentsData[]
+      }
+    };
   }
   
-  interface ICommentsData {
-    data?: CommentData;
+  export interface ICommentsData {
+    data: CommentData;
   }
   
 export function useCommentsData(id: string){
