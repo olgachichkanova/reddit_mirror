@@ -14,9 +14,8 @@ interface IPostProps {
   selftext?: string;
   onClose?: () => void;
   id: string;
-  positionY: string;
 }
-export function Post({title, selftext, onClose, id, positionY}: IPostProps) {
+export function Post({title, selftext, onClose, id}: IPostProps) {
   const [commentsData] = useCommentsData(id);
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {

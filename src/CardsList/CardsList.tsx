@@ -1,11 +1,9 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './cardslist.scss';
 import { Card } from './Card'
-import { postsContext } from '../context/postsContext';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/reducer';
-import { Template } from 'webpack';
 
 export function CardsList() {
   const token = useSelector<RootState>(state => state.token);
@@ -16,9 +14,6 @@ export function CardsList() {
   const [countLoad, setCountLoad] = useState<number>(0);
 
   const listBottom = useRef<HTMLDivElement>(null);
-  const listButton = useRef<HTMLButtonElement>(null);
-
-  
 
   useEffect(() => {
     if(!token) {
@@ -63,7 +58,7 @@ export function CardsList() {
       }
     }
     
-  }, [listBottom.current, nextAfter, token, countLoad])
+  }, [listBottom.current, countLoad])
 
   return (
     <ul className={styles.cardsList}>

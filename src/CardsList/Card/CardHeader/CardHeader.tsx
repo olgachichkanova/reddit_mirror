@@ -16,23 +16,8 @@ interface ICardHeaderProps {
 
 export function CardHeader({title, author, created, link, selftext, author_icon, id}: ICardHeaderProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [menuPos, setMenuPos] = useState('0px');
   const [isModalOpened, setIsModalOpened] = useState(false);
 
-  useEffect(() => {
-    function handleClick(event: MouseEvent) {
-      if(event.target instanceof Node && ref.current?.contains(event.target)) {
-        const yPos = event.pageY - 100 + "px";
-        setMenuPos(yPos);
-      }
-    }
-
-    document.addEventListener('click', handleClick);
-
-    return () => {
-      document.removeEventListener('click', handleClick);
-    }
-  }, []);
   return (
     <div className={styles.cardheader}>
       <div className={styles.cardHeaderBox} onClick={() => {setIsModalOpened(true)}} ref={ref}>
@@ -52,7 +37,6 @@ export function CardHeader({title, author, created, link, selftext, author_icon,
           selftext={selftext}
           onClose={()=>{setIsModalOpened(false)}}
           id={id}
-          positionY={menuPos}
         />
       )}
       </div>
