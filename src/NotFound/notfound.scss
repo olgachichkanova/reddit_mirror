@@ -1,0 +1,17 @@
+@import '../main.global.scss';
+
+.notfound {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 0;
+}
+
+.link {
+    margin: 50px 0 20px 0;
+    font-size: 18px;
+    color: $orange;
+}
