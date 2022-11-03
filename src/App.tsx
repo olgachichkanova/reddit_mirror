@@ -12,6 +12,7 @@ import thunk, { ThunkMiddleware } from  'redux-thunk'
 import { saveToken } from './store/ token/actions';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { Post } from './Post';
+import { NotFound } from './NotFound';
 
 const store = createStore(rootReducer, composeWithDevTools(
     applyMiddleware(thunk as ThunkMiddleware<RootState, MyAction>)
@@ -44,6 +45,9 @@ export function App() {
                                         <Route path="/posts/:id">
                                             <Post />
                                         </Route>
+                                    </Route>
+                                    <Route path="*">
+                                        <NotFound />
                                     </Route>
                                 </Switch>
                             </Content>
