@@ -14,7 +14,7 @@ interface ICardHeaderProps {
   id: string;
 }
 
-export function CardHeader({title, author, created, author_icon, id}: ICardHeaderProps) {
+export function CardHeader({title, author, created, author_icon, selftext, id}: ICardHeaderProps) {
   return (
     <div className={styles.cardheader}>
       <div className={styles.cardHeaderBox}>
@@ -25,7 +25,7 @@ export function CardHeader({title, author, created, author_icon, id}: ICardHeade
           type={'postCard'}
         />
         {title
-          ? <Link to={`/posts/${id}`}><h2 className={styles.cardTitle}>{title}</h2></Link>
+          ? <Link to={{pathname:`/posts/${id}`, state: {title: title, selftext: selftext}}} ><h2 className={styles.cardTitle}>{title}</h2></Link>
           : <h2 className={styles.cardTitle}>Diagon Ally to report record number of magic wonds produced by Olivander family</h2>
         }
       </div>
