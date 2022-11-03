@@ -36,7 +36,7 @@ export function Post({title, selftext}: IPostProps) {
 
   const node = document.querySelector("#modal_root");
   if(!node) return null;
-
+  console.log(commentsData)
   return ReactDOM.createPortal((
     <div className={styles.modal}>
       <div className={styles.box} ref={ref}>

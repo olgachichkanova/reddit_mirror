@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICommentsData, useCommentsData } from '../../hooks/useCommentsData';
+import { ICommentsData } from '../../hooks/useCommentsData';
 import { CommentCard } from './CommentCard';
 import styles from './commentslist.scss';
 

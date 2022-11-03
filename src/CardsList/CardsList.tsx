@@ -58,7 +58,7 @@ export function CardsList() {
       }
     }
     
-  }, [listBottom.current, countLoad])
+  }, [countLoad])
 
   return (
     <ul className={styles.cardsList}>
