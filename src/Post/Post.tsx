@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { CommentFormContainer } from '../CommentFormContainer';
 import { useCommentsData } from '../hooks/useCommentsData';
 import { Text } from '../Text';
@@ -12,16 +13,18 @@ interface IPostProps {
   link?: string;
   url?: string;
   selftext?: string;
-  onClose?: () => void;
-  id: string;
 }
-export function Post({title, selftext, onClose, id}: IPostProps) {
-  const [commentsData] = useCommentsData(id);
+export function Post({title, selftext}: IPostProps) {
   const ref = useRef<HTMLDivElement>(null)
+  const history = useHistory();
+  const listID = useParams<{id:string}>();
+
+  const [commentsData] = useCommentsData(listID.id);
+  
   useEffect(() => {
     function handleClick(event: MouseEvent) {
       if(event.target instanceof Node && !ref.current?.contains(event.target)) {
-        onClose?.()
+        history.push('/');
       }
       
     }
