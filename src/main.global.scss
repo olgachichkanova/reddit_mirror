@@ -14,6 +14,13 @@ $grayec: #ececec;
 $gray99: #999999;
 $gray66: #666666;
 
+//animation
+$animation-speed: 1000ms;
+$dot-size: 20px;
+
+@mixin animation($delay: 0ms){
+	animation: fx $animation-speed ease infinite $delay;
+}
 
 body {
     padding: 0;

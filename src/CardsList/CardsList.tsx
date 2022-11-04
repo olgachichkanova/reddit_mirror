@@ -4,6 +4,7 @@ import { Card } from './Card'
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/reducer';
+import { Loader } from '../Loader';
 
 export function CardsList() {
   const token = useSelector<RootState>(state => state.token);
@@ -81,7 +82,7 @@ export function CardsList() {
         />
       ))}
       <div ref={listBottom}></div>
-      {loading && 'Loading...'}
+      {loading && <Loader />}
       {(countLoad % 3 === 0) && (countLoad != 0) && !errorLoading && !loading && (
         <button className={styles.loadMore} onClick={() => setCountLoad(0)}>Load more</button>
       )}
