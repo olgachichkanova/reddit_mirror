@@ -1,0 +1,37 @@
+@import '../main.global.scss';
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.dot {
+	width: $dot-size;
+	height: $dot-size;
+	border: 2px solid $orange;
+	border-radius: 50%;
+	float: left;
+	margin: 0 5px;
+	transform: scale(0);
+	@include animation();
+	&:nth-child(2) {
+		@include animation($animation-speed * 0.3);
+	}
+	&:nth-child(3) {
+		@include animation($animation-speed * 0.6);
+	}
+}
+
+
+
+@keyframes fx {
+	50% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
